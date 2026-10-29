@@ -101,6 +101,12 @@ app.use("/api", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Send Crypto backend running at http://localhost:${PORT}`);
-});
+// Export the Express app for Vercel
+module.exports = app;
+
+// Run the server locally during development
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Send Crypto backend running at http://localhost:${PORT}`);
+  });
+}

@@ -2,9 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = `${
-  import.meta.env.VITE_API_URL || "http://localhost:5000"
-}/api/calculate`;
+const API_URL = `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/calculate`;
 
 function App() {
   const [asset, setAsset] = useState("ETH");
@@ -64,7 +62,7 @@ function App() {
     } catch (err) {
       setError(
         err.message === "Failed to fetch"
-          ? "Cannot connect to the backend. Make sure the server is running on port 5001."
+          ? "Cannot connect to the backend. Please check your internet connection and backend deployment."
           : err.message
       );
     } finally {
